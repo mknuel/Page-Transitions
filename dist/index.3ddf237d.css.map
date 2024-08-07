@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;;;;AAOA","sources":["Animations/Page-transitions/style.css"],"sourcesContent":["* {\n\tmargin: 0;\n\tpadding: 0;\n\tbox-sizing: border-box;\n\tfont-family: \"Poppins\", sans-serif;\n}\n\nbody {\n\tbackground: linear-gradient(260deg, #b75d62, #754d4f);\n}\n"],"names":[],"version":3,"file":"index.3ddf237d.css.map","sourceRoot":"/__parcel_source_root/"}
