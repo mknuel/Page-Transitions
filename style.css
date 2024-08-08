@@ -96,7 +96,7 @@ nav img{
 
 .circle-1{
   left: -3%;
-  bottom: -3%;
+  bottom: -5%;
   transform: scale(2);
 
 }
@@ -109,7 +109,7 @@ nav img{
 
 .circle-3{
   left: 20%;
-  top: 13%;
+  top: 10%;
   transform: scale(1.3);
 
 }
