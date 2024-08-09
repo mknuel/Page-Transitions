@@ -120,6 +120,8 @@ barba.init({
 				let gradient = getGradient(data.next.namespace);
 				enterAnimation(next, done, gradient);
 			},
+
+			
 		},
 	],
 });
@@ -140,7 +142,7 @@ function getGradient(name) {
 			break;
 	}
 }
-/* 
+
 document.body.addEventListener("keydown", (e) => {
 	console.log(e.target);
 	const path = window.location.pathname;
@@ -148,15 +150,47 @@ document.body.addEventListener("keydown", (e) => {
 	// Extract the file name from the path
 	const pageName = path.substring(path.lastIndexOf("/") + 1);
 
-	console.log(pageName);
-	const arr = ["index.html", "boot.html", "hat.html"];
-	const index = arr.indexOf(pageName);
-    // let pg = index<arr.length? % (index - 1);
 	if (e.key === "ArrowLeft") {
-		console.log(pg);
-		// window.location.href = arr[];
+		let pg = getPrev(pageName);
+		// window.location.href = pg;
+		barba.go(pg)
 	} else if (e.key === "ArrowRight") {
-		// window.location.href = arr[arr.length % (index + 1)];
+		let pg = getNext(pageName);
+		// window.location.href = pg;
+		barba.go(pg)
 	}
-});
+} );
+
+const pages = ["index.html", "boot.html", "hat.html"];
+
+const getPrev = (pg) => {
+	const index = pages.findIndex((page) => pg.match(new RegExp(page, "gi")));
+	return pages[(index - 1 + pages.length) % pages.length];
+};
+
+const getNext = (pg) => {
+	const index = pages.findIndex((page) => pg.match(new RegExp(page, "gi")));
+	return pages[(index + 1) % pages.length];
+};
+
+
+/* const getPrev = (pg) => {
+	if (pg.match(/index/gi)) {
+		return "hat.html";
+	} else if (pg.match(/boot/gi)) {
+		return "index.html";
+	} else {
+		return "hat.html";
+	}
+};
+
+const getNext = (pg) => {
+	if (pg.match(/index/gi)) {
+		return "boot.html";
+	} else if (pg.match(/boot/gi)) {
+		return "hat.html";
+	} else {
+		return "index.html";
+	}
+};
  */
