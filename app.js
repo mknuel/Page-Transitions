@@ -123,8 +123,45 @@ barba.init({
 
 			
 		},
+
+		{
+			name: "product-transition", 
+			sync:true,
+			from: { namespace: [ "handbag", "product" ] },
+			to: { namespace: [ 'product', "handbag" ] },
+			enter ( data )
+			{
+				const done = this.async()
+				let next = data.next.container;
+				productEnterAnimtion(next, done)
+			},
+			leave ( data )
+			{
+				const done = this.async()
+				let current = data.current.container
+				productLeaveAnimtion(current, done)
+
+				
+			}
+		}
 	],
-});
+} );
+
+const productEnterAnimtion = (next, done) =>
+{
+	tlEnter.fromTo( next, { y: "100%" }, { y: "0" } );
+	tlEnter.fromTo( ".card", {
+		opacity:0, y:50
+	},{opacity:1, y:0,stagger:.1, onComplete:done})
+}
+
+const productLeaveAnimtion = (current, done) =>
+{
+	tlLeave.fromTo(current, { y: 0 }, { y: "100%" });
+
+}
+
+
 
 // changing gradient on showcase
 function getGradient(name) {
@@ -194,3 +231,5 @@ const getNext = (pg) => {
 	}
 };
  */
+
+
