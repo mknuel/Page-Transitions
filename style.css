@@ -114,6 +114,54 @@ nav img{
 
 }
 
-.circle-{
+.product-nav{
+  min-height: 10vh;
+}
 
+.product-section{
+  background:#fff;
+  min-height: 90vh;
+  position: absolute;
+  width: 100%;
+  z-index: 4;
+}
+
+.product-description{
+  padding: 5% 10%;
+  color: #4b4b4b;
+  
+}
+
+.product-description h2{
+  padding: 5% 10%;
+  color: #4b4b4b;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+
+
+
+}
+
+.product-gallery{
+  display: grid;
+  
+  padding: 5% 0%;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.product-gallery .product-img{
+ border-radius: 1rem;
+ width: 100%;
+}
+
+.price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+  ;
+}
+
+.card{
+  padding: 1.5rem;
 }
